@@ -208,9 +208,10 @@ const login = (event) => {
 
               <!-- create account -->
               <VCol cols="12" class="text-center">
-                <span>New on our platform?</span>
-
-                <a class="text-primary ms-2" href="#"> Create an account </a>
+                <span>¿Eres estudiante?</span>
+                <a class="text-primary ms-2" href="/loginstudent"
+                  >Iniciar sesión como estudiante</a
+                >
               </VCol>
 
               <VCol cols="12" class="d-flex align-center">

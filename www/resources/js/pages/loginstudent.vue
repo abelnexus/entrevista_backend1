@@ -64,74 +64,6 @@ const login = (event) => {
       console.error("Error during login:", error);
     });
 };
-// const login = (event) => {
-//   event.preventDefault();
-
-//   axios
-//     .post(
-//       "/api/login",
-//       {
-//         email: email.value,
-//         password: password.value,
-//         login_as: "student", // o "admin"
-//       },
-//       {
-//         withCredentials: true, // IMPORTANTE para que las cookies se guarden
-//       }
-//     )
-//     .then((res) => {
-//       console.log("Login correcto");
-//       // No necesitas guardar nada, la cookie está presente
-//       axios
-//         .get("/api/user", { withCredentials: true })
-//         .then((response) => {
-//           // Guardar los datos del usuario en localStorage
-//           // Extraer las habilidades del usuario
-//           const userAbilities = response.data.ability || [];
-//           console.log(userAbilities);
-//           // Actualiza las habilidades de CASL
-//           ability.update(userAbilities);
-//           // Verifica las habilidades actualizadas
-//           router.push("/"); // NAVEGA sin recargar la página
-//         })
-//         .catch((error) => {
-//           console.error("Error during login:", error);
-//         });
-//     });
-// };
-// const login = (event) => {
-//   event.preventDefault(); // Esto previene la recarga de la página
-//   // Aquí puedes continuar con el código de autenticación
-//   // por ejemplo, llamando a la API con axios:
-//   axios
-//     .post("/api/login", {
-//       email: email.value,
-//       password: password.value,
-//     })
-//     .then((response) => {
-//       // Guardar el token en localStorage
-//       localStorage.setItem("accessToken", response.data.accessToken);
-//       axios
-//         .get("/api/user")
-//         .then((response) => {
-//           // Guardar los datos del usuario en localStorage
-//           localStorage.setItem("userData", JSON.stringify(response.data));
-//           // Extraer las habilidades del usuario
-//           const userAbilities = response.data.ability || [];
-//           // Actualiza las habilidades de CASL
-//           ability.update(userAbilities);
-//           // Verifica las habilidades actualizadas
-//           console.log("Updated abilities: ", ability.rules);
-//           // window.location.href = "/";
-//         })
-//         .catch((error) => {
-//           console.error("Error during login:", error);
-//         });
-//     })
-//     .catch((error) => {
-//       console.error("Error during login:", error);
-//     });
-// };
 </script>
 
 <template>
@@ -213,9 +145,10 @@ const login = (event) => {
 
               <!-- create account -->
               <VCol cols="12" class="text-center">
-                <span>New on our platform?</span>
-
-                <a class="text-primary ms-2" href="#"> Create an account </a>
+                <span>¿Eres administrador?</span>
+                <a class="text-primary ms-2" href="/login"
+                  >Iniciar sesión como admin</a
+                >
               </VCol>
 
               <VCol cols="12" class="d-flex align-center">
